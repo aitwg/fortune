@@ -1003,7 +1003,7 @@
                 }
             });
 
-            const apiUrl = "https://europe-west3-durable-pulsar-384402.cloudfunctions.net/ai"
+            const apiUrl = "https://gen.aitwg.com/v1/chat/completions"
             // const apiUrl = "http://localhost:3000/ai"
 
             const loadingOverlay = document.querySelector('.loading-overlay');
@@ -1052,15 +1052,16 @@
                 const progressInterval = setInterval(updateProgress, 2000);
 
                 const apiBody = {
-                    "userId": '0_cyber8',
-                    "text": prompt,
-                    "type": "text",
+                    "model": "gpt-4o",
+                    "prompt": prompt,
+                    "stream": false
                 }
                 try {
-                    const response = await fetch(`${apiUrl}?type=8z`, {
+                    const response = await fetch(`${apiUrl}`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
+                            'Authorization': 'Bearer sk-V2T5h1fG16VcfwLi7b731102100344DdAe4dF2C482A90142AI'
                         },
                         body: JSON.stringify(apiBody)
                     });
