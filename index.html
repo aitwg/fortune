@@ -1003,8 +1003,8 @@
                 }
             });
 
-            const apiUrl = "https://gen.aitwg.com/v1/chat/completions"
-            // const apiUrl = "http://localhost:3000/ai"
+            const apiUrl = "https://open.aitwg.com/"
+            //const apiUrl = "http://localhost:3000/ai"
 
             const loadingOverlay = document.querySelector('.loading-overlay');
 
@@ -1052,7 +1052,7 @@
                 const progressInterval = setInterval(updateProgress, 2000);
 
                 const apiBody = {
-                    "model": "gpt-4o",
+                    "model": "grok-free",
                     "prompt": prompt,
                     "stream": false
                 }
@@ -1061,7 +1061,7 @@
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
-                            'Authorization': 'Bearer sk-V2T5h1fG16VcfwLi7b731102100344DdAe4dF2C482A90142AI'
+                            'Authorization': 'Bearer sk-DMGI1TNyC964ULUfF9AdB9BeC93d4719A2A62f8d40A56f01'
                         },
                         body: JSON.stringify(apiBody)
                     });
