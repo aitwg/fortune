@@ -944,6 +944,8 @@
 
             window.copyPrompt = function () {
                 const promptText = outputDiv.textContent.replace('複製', '').trim();
+                const url = `http://ezchat.aitwg.com/prompt?prompt=${encodeURIComponent(promptText)}`;
+                window.open(url, "_blank");  // Opens in a new tab or window
                 navigator.clipboard.writeText(promptText)
                     .then(() => {
                         alert('Prompt 複製完成！');
