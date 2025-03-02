@@ -934,12 +934,12 @@
 
             window.copyPrompt = function () {
                 const promptText = outputDiv.textContent.replace('複製', '').trim();
-                fetch("https://ezchat.aitwg.com/prompt", {
+                fetch("https://eztalk.aitwg.com/chat", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
                     },
-                    body: JSON.stringify({ prompt: promptText })
+                    body: JSON.stringify({ message: promptText })
                 })
                 .then(response => response.json())
                 .then(data => {
